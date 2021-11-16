@@ -1,16 +1,25 @@
-# Projeto crudDev
-
-Desenvolvido em Laravel, React e Mysql.
-O sistema apresenta as funções Criar/Editar/Excluir/Listar Desenvolvedores.
+# Projeto Hackaton CSS-MODAS
 
 Seguem os atributos da tabela:
 
-## - DESENVOLVEDOR:
-1. Nome;
-2. Sexo;
-3. Idade;
-4. Data de Nascimento;
-5. Hobbie;
+## - CATEGORIAS:
+1. id;
+2. categoria;
+
+## - Empresa:
+1. id;
+2. empresa;
+3. whatsapp;
+
+## - Produto:
+1. id;
+2. produto;
+3. descricao;
+4. valor;
+5. foto;
+6. categoria_id;
+7. empresa_id;
+
 
 ## Configuração do projeto para execução
 
@@ -18,7 +27,7 @@ Seguem os atributos da tabela:
 ### EXECUÇÂO DIRETA
 
 1) Clone esse repositório para a sua máquina:
-```git clone https://github.com/ThiaAlves/crudDev.git```
+```git clone https://github.com/ThiaAlves/css-modas.git```
 
 2) Instale as dependências necessárias para execução do projeto
 ```composer install```
@@ -29,9 +38,9 @@ Seguem os atributos da tabela:
 DB_CONNECTION=mysql
 DB_HOST=localhost
 DB_PORT=3306
-DB_DATABASE=crudDev
-DB_USERNAME=username
-DB_PASSWORD=password
+DB_DATABASE=cssmodas (NOME DO BANCO DE DADOS)
+DB_USERNAME=username (USUARIO DO BANCO)
+DB_PASSWORD=password (SENHA DO SEU BANCO)
 ```
 4) Importar o banco de dados:
 ```php artisan migrate```
@@ -43,6 +52,8 @@ DB_PASSWORD=password
 
 ```npm run watch```
 ```php artisan serve```
+
+7) Import os inserts em BancoDeDados/cssmodas.sql
  
  
 ### EXECUÇÂO EM DOCKER
@@ -53,7 +64,7 @@ Observação: A configuração do docker-compose.yml foi configurado para ser ex
 em uma máquina linux, em execuções no windows será necessário fazer alguns ajustes.
 
 1) Clone esse repositório para a sua máquina:
-```git clone https://github.com/ThiaAlves/crudDev.git```
+```git clone https://github.com/ThiaAlves/cssmodas.git```
 
 2) Copie o arquivo .env.example para o diretorio do projeto com o comando:
 ```cp .env.example .env```
@@ -71,15 +82,24 @@ em uma máquina linux, em execuções no windows será necessário fazer alguns 
 ```docker exec -it crud-dev-app composer install```
 
 ### Definir chave do app
-```docker exec -it crud-dev-app php artisan key:generate```
+```docker exec -it cssmodas php artisan key:generate```
 
 ### Para construir o banco de dados
-```docker exec -it crud-dev-app php artisan migrate```
+```docker exec -it cssmodas php artisan migrate```
 
 ### Acessar projeto pelo Browser
 ```localhost:8080```
 
-#### Para executar o Teste;
+
+### Rotas para a API
+
+1) - Tabela Categoria = api/categorias;
+2) - Tabela Empresa = api/empresas;
+3) - Tabela Produto = api/produtos;
+
+
+
+#### Para executar os Testes Unitários;
 Para executar o teste, execute o comando ```docker exec -it crud-dev-app php ./vendor/bin/phpunit``` 
 A saída do comando acima deverá ser:
 ```

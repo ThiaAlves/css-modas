@@ -79,7 +79,7 @@ em uma máquina linux, em execuções no windows será necessário fazer alguns 
 ```docker ps```
 
 ### Para instalar as dependências do composer
-```docker exec -it crud-dev-app composer install```
+```docker exec -it css-modas composer install```
 
 ### Definir chave do app
 ```docker exec -it cssmodas php artisan key:generate```
@@ -88,7 +88,7 @@ em uma máquina linux, em execuções no windows será necessário fazer alguns 
 ```docker exec -it cssmodas php artisan migrate```
 
 ### Acessar projeto pelo Browser
-```localhost:8080```
+```localhost:8082```
 
 
 ### Rotas para a API

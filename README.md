@@ -66,7 +66,7 @@ em uma máquina linux, em execuções no windows será necessário fazer alguns 
 1) Clone esse repositório para a sua máquina:
 ```git clone https://github.com/ThiaAlves/cssmodas.git```
 
-2) Copie o arquivo .env.example para o diretorio do projeto com o comando:
+2) Copie o arquivo .env.example renomeando para .env para o diretorio do projeto com o comando:
 ```cp .env.example .env```
 
 3) Para construir a imagem do app
@@ -79,7 +79,7 @@ em uma máquina linux, em execuções no windows será necessário fazer alguns 
 ```docker ps```
 
 ### Para instalar as dependências do composer
-```docker exec -it css-modas composer install```
+```docker exec -it cssmodas composer install```
 
 ### Definir chave do app
 ```docker exec -it cssmodas php artisan key:generate```

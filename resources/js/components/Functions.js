@@ -54,13 +54,6 @@ export const deleteDataCategoria = id => {
 
 
 
-
-
-
-
-
-
-
 // Api empresa
 
 export const readDataEmpresa = page_no => {
@@ -170,3 +163,33 @@ export const deleteDataProduto = id => {
     });
 }
 
+export const formataValor = (valor) => {
+    valor = parseFloat(valor);
+    return valor.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+}
+
+
+export const retornaCategoria = () => {
+
+
+    const [categorias,getCategorias] = useState([]);
+
+    useEffect(() => {
+        axios.get('api/categorias')
+        .then((response) => {
+            getCategorias(response.data.data);
+
+        })
+    },[]);
+
+    return(
+
+     <>
+        {categorias.map((item,index) => 
+        (
+                <option value={item.id}>{item.categoria}</option>
+        ))} 
+
+     </>   
+    )
+}

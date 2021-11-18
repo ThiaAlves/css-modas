@@ -1,8 +1,9 @@
 import React, { Component, Fragment, useState } from 'react';
-import { readDataProduto, insertDataProduto, deleteDataProduto } from './Functions';
+import { readDataProduto, insertDataProduto, deleteDataProduto, formataValor } from './Functions';
 import Menu from "./Menu";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Swal from 'sweetalert2';
+import {Categorias, Empresas} from './Options';
 
 
 
@@ -19,7 +20,6 @@ export default class produto extends Component {
             empresa_id: '',
             editable: false,
             produtos: [],
-            categorias: [],
             prev_page: '',
             next_page: '',
             current_page: '',
@@ -190,9 +190,6 @@ export default class produto extends Component {
     }
 
 
-
-
-
     render() {
         return (
             <div className="layout row">
@@ -220,14 +217,12 @@ export default class produto extends Component {
                             <label for="foto">Foto:</label>
                             <input type="file" className="form-control" name="foto" maxLength="255" value={this.state.foto || ''} onChange={this.onChange}/>
                          </div> 
-                         <div className="form-group col-12 col-md-4">
-                            <label for="categoria">Categoria:</label>
-                            <input type="text" className="form-control" name="categoria" maxLength="255" value={this.state.categoria || ''} onChange={this.onChange}/>
-                         </div> 
-                         <div className="form-group col-12 col-md-4">
-                            <label for="empresa">Empresa:</label>
-                            <input type="text" className="form-control" name="empresa" maxLength="255" value={this.state.empresa || ''} onChange={this.onChange}/>
-                         </div> 
+                        <Categorias/>
+                            {/* <input type="text" className="form-control" name="categoria" maxLength="255" value={this.state.categoria || ''} onChange={this.onChange}/> */}
+                         
+                         <Empresas/>
+                            {/* <input type="text" className="form-control" name="empresa" maxLength="255" value={this.state.empresa || ''} onChange={this.onChange}/> */}
+                         
                          <div className="form-group col-12 col-md-4">
                             <label for="valor">Valor:</label>
                             <input type="text" className="form-control" name="valor" maxLength="255" value={this.state.valor || ''} onChange={this.onChange}/>
@@ -263,10 +258,10 @@ export default class produto extends Component {
                 {this.state.produtos.map((produto, index) => {
                     return <tr key={index}>
                         <td>{produto.produto}</td>
-                        <td>{produto.valor}</td>
-                        <td>{produto.categoria}</td>
-                        <td>{produto.empresa}</td>
-                        <td>{produto.foto}</td>
+                        <td>{formataValor(produto.valor)}</td>
+                        <td>{produto.categoria_id}</td>
+                        <td>{produto.empresa_id}</td>
+                        <td><img src={'/images/'+produto.foto} width="100%" height="100%"></img></td>
                         <td>
                         <button type="button" className="btn btn-primary btn-sm p-1" data-toggle="modal" data-target="#editproduto" name="edit" onClick={(event) => this.onEdit(event, index)}><FontAwesomeIcon icon="pencil-alt"  className="icon"/></button>
                         <button type="button" className="btn btn-danger btn-sm p-1" name="delete" onClick={(event) => this.onDelete(event, produto.id)}><FontAwesomeIcon icon="trash-alt"  className="icon"/></button>

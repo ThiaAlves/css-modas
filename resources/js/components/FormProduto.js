@@ -1,9 +1,10 @@
 import React, { Component, Fragment, useEffect, useState } from 'react';
-import { readDataProduto, insertDataProduto, deleteDataProduto, readDataCategoria } from './Functions';
+import { readDataProduto, insertDataProduto, deleteDataProduto } from './Functions';
 import Menu from "./Menu";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import {Categorias, Empresas} from './Options';
 
 
 
@@ -173,17 +174,13 @@ export default class produto extends Component  {
                             <label for="foto">Foto:</label>
                             <input type="file" className="form-control" name="foto" maxLength="255" value={this.state.foto || ''} onChange={this.onChange}/>
                          </div> 
-                         <div className="form-group col-12 col-md-4">
-                            <label for="categoria">Categoria:</label>  
+                            <Categorias/>  
                             {/* <input type="text" className="form-control" name="categoria" maxLength="255" value={this.state.categoria || ''} onChange={this.onChange}/> */}
-                         </div> 
-                         <div className="form-group col-12 col-md-4">
-                            <label for="empresa">Empresa:</label>
-                            <input type="text" className="form-control" name="empresa" maxLength="255" value={this.state.empresa || ''} onChange={this.onChange}/>
-                         </div> 
+                            <Empresas/>
+                            {/* <input type="text" className="form-control" name="empresa" maxLength="255" value={this.state.empresa || ''} onChange={this.onChange}/> */}
                          <div className="form-group col-12 col-md-4">
                             <label for="valor">Valor:</label>
-                            <input type="text" className="form-control" name="valor" maxLength="255" value={this.state.valor || ''} onChange={this.onChange}/>
+                            <input type="number" className="form-control" name="valor" maxLength="255" value={this.state.valor || ''} onChange={this.onChange}/>
                          </div> 
                          <div className="form-group col-12 col-md-12">
                             <label for="descricao">Descrição:</label>
@@ -198,7 +195,8 @@ export default class produto extends Component  {
                             <button type="submit" className="btn btn-success" name="save" onclick={this.onSubmit}><FontAwesomeIcon icon="check"  className="icon"/>Salvar</button>
                     </div>
                 </div>
-                </form>                
+                </form>
+              
                 </div>
             </div>
            </div> 

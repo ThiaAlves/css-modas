@@ -7,43 +7,43 @@ services:
         uid: 1000
       context: ./
       dockerfile: Dockerfile
-    image: crud-dev
+    image: css-modas
     container_name: cssmodas
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
       - ./:/var/www
     networks:
-      - crud-dev
+      - css-modas
 
   db:
     image: mysql:5.7
-    container_name: crud-dev-db
+    container_name: css-modas-db
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      # MYSQL_PASSWORD: ${DB_PASSWORD}
-      # MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
       - ./docker-compose/mysql:/docker-entrypoint-initdb.d
     networks:
-      - crud-dev
+      - css-modas
 
   nginx:
     image: nginx:alpine
-    container_name: crud-dev-nginx
+    container_name: css-modas-nginx
     restart: unless-stopped
     ports:
-      - 8080:80
+      - 8082:80
     volumes:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d/
     networks:
-      - crud-dev
+      - css-modas
 
 networks:
-  crud-dev:
+  css-modas:
     driver: bridge

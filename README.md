@@ -64,7 +64,7 @@ Observação: A configuração do docker-compose.yml foi configurado para ser ex
 em uma máquina linux, em execuções no windows será necessário fazer alguns ajustes.
 
 1) Clone esse repositório para a sua máquina:
-```git clone https://github.com/ThiaAlves/cssmodas.git```
+```git clone https://github.com/ThiaAlves/css-modas.git```
 
 2) Copie o arquivo .env.example renomeando para .env para o diretorio do projeto com o comando:
 ```cp .env.example .env```

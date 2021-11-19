@@ -53,7 +53,7 @@ export default class categoria extends Component {
         let input_data = this.validateData(this.state)
         if(input_data) {
             input_data.id = this.state.id
-            insertDataEmpresa(input_data, this.state.editable)
+            insertDataCategoria(input_data, this.state.editable)
             .then(() => {
                 this.setState({
                     id: '',

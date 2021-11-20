@@ -64,9 +64,9 @@ Observação: A configuração do docker-compose.yml foi configurado para ser ex
 em uma máquina linux, em execuções no windows será necessário fazer alguns ajustes.
 
 1) Clone esse repositório para a sua máquina:
-```git clone https://github.com/ThiaAlves/cssmodas.git```
+```git clone https://github.com/ThiaAlves/css-modas.git```
 
-2) Copie o arquivo .env.example para o diretorio do projeto com o comando:
+2) Copie o arquivo .env.example renomeando para .env para o diretorio do projeto com o comando:
 ```cp .env.example .env```
 
 3) Para construir a imagem do app
@@ -79,7 +79,7 @@ em uma máquina linux, em execuções no windows será necessário fazer alguns 
 ```docker ps```
 
 ### Para instalar as dependências do composer
-```docker exec -it crud-dev-app composer install```
+```docker exec -it cssmodas composer install```
 
 ### Definir chave do app
 ```docker exec -it cssmodas php artisan key:generate```
@@ -88,7 +88,7 @@ em uma máquina linux, em execuções no windows será necessário fazer alguns 
 ```docker exec -it cssmodas php artisan migrate```
 
 ### Acessar projeto pelo Browser
-```localhost:8080```
+```localhost:8082```
 
 
 ### Rotas para a API

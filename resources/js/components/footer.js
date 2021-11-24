@@ -3,7 +3,7 @@ import React from "react";
 const footer = () => {
     return(
         <>
-            <footer><p>Desenvolvido por Thiago Matteus Alves</p></footer>
+            <footer><p>Copyright 2021 - CSS MODAS</p></footer>
 
         </>
     )

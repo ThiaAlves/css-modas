@@ -178,7 +178,7 @@ export default class categoria extends Component {
     render() {
         return (
             <div className="layout row">
-            <Menu />
+
             <div className="actionDiv col-9">
             <div className="Formdiv">
             <h1 className="text-center pb-5">Listagem de Categorias</h1>
@@ -212,13 +212,15 @@ export default class categoria extends Component {
                 <table class="table table-hover" id="tablecategorias">
             <thead>
                 <tr>
-                <th scope="col" width="90%">Categoria</th>
+                <th scope="col" width="10%">ID</th>
+                <th scope="col" width="80%">Categoria</th>
                 <th scope="col" width="10%">Ações</th>
                 </tr>
             </thead>
             <tbody>
                 {this.state.categorias.map((categoria, index) => {
                     return <tr key={index}>
+                        <td>{categoria.id}</td>
                         <td>{categoria.categoria}</td>
                         <td>
                         <button type="button" className="btn btn-primary btn-sm p-1" data-toggle="modal" data-target="#editcategoria" name="edit" onClick={(event) => this.onEdit(event, index)}><FontAwesomeIcon icon="pencil-alt"  className="icon"/></button>

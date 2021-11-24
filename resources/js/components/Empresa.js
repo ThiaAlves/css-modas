@@ -183,7 +183,7 @@ export default class empresa extends Component {
     render() {
         return (
             <div className="layout row">
-            <Menu />
+
             <div className="actionDiv col-9">
             <div className="Formdiv">
             <h1 className="text-center pb-5">Listagem de empresas</h1>
@@ -221,7 +221,8 @@ export default class empresa extends Component {
                 <table class="table table-hover" id="tableempresas">
             <thead>
                 <tr>
-                <th scope="col" width="50%">Empresa</th>
+                <th scope="col" width="10%">ID</th>
+                <th scope="col" width="40%">Empresa</th>
                 <th scope="col" width="40%">Whatsapp</th>
                 <th scope="col" width="10%">Ações</th>
                 </tr>
@@ -229,6 +230,7 @@ export default class empresa extends Component {
             <tbody>
                 {this.state.empresas.map((empresa, index) => {
                     return <tr key={index}>
+                        <td>{empresa.id}</td>
                         <td>{empresa.empresa}</td>
                         <td>{empresa.whatsapp}</td>
                         <td>

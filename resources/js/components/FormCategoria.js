@@ -135,7 +135,7 @@ export default class categoria extends Component {
     render() {
         return (
             <div className="layout row">
-                <Menu />
+
                 <div className="actionDiv col-9">
                     <div className="Formdiv">
                     <h1 className="text-center pb-5">Cadastrar Categoria</h1>

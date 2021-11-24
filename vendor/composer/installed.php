@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '8f6ece4dde79ce4a8f0aab62eb1882c7ab759d01',
+        'reference' => 'ab5898d9b3e46a55da39baff2e0b2f814b3f9441',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -388,6 +388,15 @@
                 0 => 'v8.54.0',
             ),
         ),
+        'intervention/image' => array(
+            'pretty_version' => '2.7.0',
+            'version' => '2.7.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../intervention/image',
+            'aliases' => array(),
+            'reference' => '9a8cc99d30415ec0b3f7649e1647d03a55698545',
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -409,7 +418,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '8f6ece4dde79ce4a8f0aab62eb1882c7ab759d01',
+            'reference' => 'ab5898d9b3e46a55da39baff2e0b2f814b3f9441',
             'dev_requirement' => false,
         ),
         'laravel/tinker' => array(
@@ -760,8 +769,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0',
+                0 => '1.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(

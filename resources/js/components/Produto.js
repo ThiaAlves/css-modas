@@ -193,7 +193,7 @@ export default class produto extends Component {
     render() {
         return (
             <div className="layout row">
-            <Menu />
+
             <div className="actionDiv col-9">
             <div className="Formdiv">
             <h1 className="text-center pb-5">Listagem de Produtos</h1>

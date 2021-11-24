@@ -126,6 +126,24 @@ footer {
     left: 0;
     bottom: 0;
   }
+.nav-link, .navbar-brand {
+    color: rgb(36, 34, 34);
+  }
+.nav-link:hover, .navbar-brand:hover {
+    color: rgb(141, 137, 78);
+  }
+ .navbar-brand {
+    padding-inline-end: 15px;
+  }
+
+  .linkMenu ,.linkMenu:link  {
+      text-decoration: none;
+      color: #28292c;
+  }
+
+  .nav-item{
+      cursor: pointer;
+  }
 
 
 @media screen and (max-width:1000px){

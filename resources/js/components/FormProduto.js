@@ -8,7 +8,6 @@ import {Categorias, Empresas} from './Options';
 
 
 
-
 export default class produto extends Component  {
     constructor() {
         super()
@@ -30,7 +29,9 @@ export default class produto extends Component  {
         this.onSubmit = this.onSubmit.bind(this)
         this.onChange = this.onChange.bind(this)
         this.onCancel = this.onCancel.bind(this)
+
     }
+    
    
     componentDidMount() {
         this.getData(this.state.next_page)
@@ -65,6 +66,7 @@ export default class produto extends Component  {
     onSubmit(event) {
         event.preventDefault()
         let input_data = this.validateData(this.state)
+
         if(input_data) {
             input_data.id = this.state.id
             insertDataProduto(input_data, this.state.editable)
@@ -100,8 +102,21 @@ export default class produto extends Component  {
                 icon: 'error',
                 confirmButtonText: 'Fechar'  
             })
+            console.log(this.state);
         }
     }
+
+    createImage(file) {
+        let reader = new FileReader();
+        reader.onload = (e) => {
+            this.setState({
+                foto: e.target.result
+            })
+        };
+        reader.readAsDataURL(file);
+    }
+
+
 
     onCancel(event) {
         event.preventDefault()
@@ -136,7 +151,9 @@ export default class produto extends Component  {
         }
         return
     }
-    
+
+
+
 
     
 
@@ -157,10 +174,11 @@ export default class produto extends Component  {
 
     render() {
 
+ 
     
         return (
             <div className="layout row">
-                <Menu />
+
                 <div className="actionDiv col-9">
                     <div className="Formdiv">
                     <h1 className="text-center pb-5">Cadastrar produto</h1>
@@ -174,17 +192,18 @@ export default class produto extends Component  {
                             <label for="foto">Foto:</label>
                             <input type="file" className="form-control" name="foto" maxLength="255" value={this.state.foto || ''} onChange={this.onChange}/>
                          </div> 
-                            <Categorias/>  
-                            {/* <input type="text" className="form-control" name="categoria" maxLength="255" value={this.state.categoria || ''} onChange={this.onChange}/> */}
-                            <Empresas/>
-                            {/* <input type="text" className="form-control" name="empresa" maxLength="255" value={this.state.empresa || ''} onChange={this.onChange}/> */}
+
+                            <Categorias/> 
+                            {/* <input type="text" className="form-control" name="categoria_id" maxLength="255" placeholder="Informe a produto" value={this.state.categoria_id || ''} onChange={this.onChange}/> */}
+                             <Empresas/>
+                            {/* <input type="text" className="form-control" name="empresa_id" maxLength="255" placeholder="Informe a empresa" value={this.state.empresa_id || ''} onChange={this.onChange}/> */}
                          <div className="form-group col-12 col-md-4">
                             <label for="valor">Valor:</label>
                             <input type="number" className="form-control" name="valor" maxLength="255" value={this.state.valor || ''} onChange={this.onChange}/>
                          </div> 
                          <div className="form-group col-12 col-md-12">
                             <label for="descricao">Descrição:</label>
-                            <textarea name="descricao" rows="3" className="form-control"></textarea>
+                            <input type="text" className="form-control" name="descricao" maxLength="255" placeholder="Informe a Descrição" value={this.state.descricao || ''} onChange={this.onChange}/>
                             {/* <input type="text" className="form-control" name="descricao" maxLength="255" value={this.state.descricao || ''} onChange={this.onChange}/> */}
                          </div> 
                                            

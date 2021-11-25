@@ -34,4 +34,9 @@ class Empresa extends Model
     {
         return Empresa::where('id', $id)->delete();        
     }
+
+    public static function returnDetails($id)
+    {
+        return Empresa::where('id', $id)->get();        
+    }
 }

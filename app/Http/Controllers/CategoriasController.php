@@ -22,4 +22,8 @@ class CategoriasController extends Controller
     public function destroy($id) {
         return Categoria::deleteCategoria($id);
     }
+    public function find($id) {
+        $Categorias = Categoria::returnDetails($id);
+        return $Categorias;
+    }
 }

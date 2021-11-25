@@ -43,4 +43,9 @@ class Produto extends Model
         return Produto::where('id', $id)->delete();        
     }
 
+    public static function returnDetails($id)
+    {
+        return Produto::where('id', $id)->get();        
+    }
+
 }

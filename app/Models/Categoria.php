@@ -32,4 +32,9 @@ class Categoria extends Model
     {
         return Categoria::where('id', $id)->delete();        
     }
+
+    public static function returnDetails($id)
+    {
+        return Categoria::where('id', $id)->get();        
+    }
 }

@@ -33,5 +33,10 @@ class ProdutosController extends Controller
     public function destroy($id) {
         return Produto::deleteProduto($id);
     }
+
+    public function find($id) {
+        $Produtos = Produto::returnDetails($id);
+        return $Produtos;
+    }
 }
 

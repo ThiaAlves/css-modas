@@ -22,4 +22,9 @@ class EmpresasController extends Controller
     public function destroy($id) {
         return Empresa::deleteEmpresa($id);
     }
+
+    public function find($id) {
+        $Empresas = Empresa::returnDetails($id);
+        return $Empresas;
+    }
 }

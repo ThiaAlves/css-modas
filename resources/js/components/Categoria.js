@@ -187,7 +187,7 @@ export default class categoria extends Component {
     <div className="modal-content">
       <div className="modal-header">
         <h5 className="modal-title" id="editcategoriaLabel">Editar Categoria</h5>
-        <button type="button" class="close btn btn-sm btn-outline-danger" data-dismiss="modal" aria-label="Close">
+        <button type="button" className="close btn btn-sm btn-outline-danger" data-dismiss="modal" aria-label="Close">
         <FontAwesomeIcon icon="times"  className="icon"/>
         </button>
       </div>
@@ -195,14 +195,14 @@ export default class categoria extends Component {
       <div className="modal-body">
                     <div className="row">
                         <div className="form-group col-12 col-md-8">
-                        <label for="categoria">Categoria:</label>
+                        <label >Categoria:</label>
                             <input type="text" className="form-control" name="categoria" maxLength="255" placeholder="Informe o nome da categoria" value={this.state.categoria || ''} onChange={this.onChange}/>
                          </div> 
                 </div>
                
                 </div>
                 <div className="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal"><FontAwesomeIcon icon="times"  className="icon"/>Cancelar</button>
+                    <button type="button" className="btn btn-danger" data-dismiss="modal"><FontAwesomeIcon icon="times"  className="icon"/>Cancelar</button>
                     <button type="submit" className="btn btn-success" name="update" onclick={this.onSubmit} ><FontAwesomeIcon icon="check"  className="icon"/>Atualizar</button>
                 </div>
                 </form>    

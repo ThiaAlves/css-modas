@@ -19,6 +19,7 @@ class CreateProdutosTable extends Migration
             $table->string('foto', 45);
             $table->text('descricao');
             $table->double('valor', 8, 2);
+            $table->double('promo', 3, 2);
             $table->bigInteger('categoria_id')->unsigned()->index()->nullable();
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
             $table->bigInteger('empresa_id')->unsigned()->index()->nullable();

@@ -16,15 +16,12 @@ export const Categorias = () => {
     return(
 
      <>
-        <div className="form-group col-12 col-md-4">
-        <label for="categoria_id">Categoria:</label>  
-         <select name="categoria_id" id="categoria_id" className="form-control">
-        {categorias.map((item,index) => 
+                <option value="">Selecione</option>
+            {categorias.map((item,index) => 
         (
                 <option value={item.id}>{item.categoria}</option>
         ))} 
-        </select>
-     </div>
+
      </>   
     )
 }
@@ -44,15 +41,13 @@ export const Empresas = () => {
     return(
 
      <>
-        <div className="form-group col-12 col-md-4">
-        <label for="empresa_id">Empresa:</label>  
-         <select name="empresa_id" id="empresa_id" className="form-control">
+
+         <option value="">Selecione</option>
         {empresas.map((item,index) => 
         (
                 <option value={item.id}>{item.empresa}</option>
         ))} 
-        </select>
-     </div>
+
      </>   
     )
 }

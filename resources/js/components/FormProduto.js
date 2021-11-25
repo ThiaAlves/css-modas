@@ -8,6 +8,7 @@ import {Categorias, Empresas} from './Options';
 
 
 
+
 export default class produto extends Component  {
     constructor() {
         super()
@@ -29,6 +30,8 @@ export default class produto extends Component  {
         this.onSubmit = this.onSubmit.bind(this)
         this.onChange = this.onChange.bind(this)
         this.onCancel = this.onCancel.bind(this)
+        this.mudaValorCategoria = this.mudaValorCategoria.bind(this)
+        this.mudaValorEmpresa = this.mudaValorEmpresa.bind(this)
 
     }
     
@@ -154,7 +157,7 @@ export default class produto extends Component  {
 
 
 
-
+ 
     
 
     // ageValidate() {
@@ -170,13 +173,21 @@ export default class produto extends Component  {
     //     }
     // }
 
+    mudaValorCategoria(e){
+        console.log("Categoria Selecionada "+e.target.value);
+        this.setState({ categoria_id: e.target.value });
+    }
+    mudaValorEmpresa(e){
+        console.log("Empresa Selecionada "+e.target.value);
+        this.setState({ empresa_id: e.target.value });
+    }
 
 
     render() {
-
- 
+        
     
         return (
+            
             <div className="layout row">
 
                 <div className="actionDiv col-9">
@@ -192,10 +203,21 @@ export default class produto extends Component  {
                             <label for="foto">Foto:</label>
                             <input type="file" className="form-control" name="foto" maxLength="255" value={this.state.foto || ''} onChange={this.onChange}/>
                          </div> 
+                         <div className="form-group col-12 col-md-4">
+                         <label for="categoria_id">Categoria:</label>  
+                           <select name="categoria_id" id="categoria_id" value={this.state.categoria_id || ''} onChange={this.mudaValorCategoria} className="form-control">
+                            <Categorias /> 
 
-                            <Categorias/> 
+                            </select>
+                          </div>
+                        
                             {/* <input type="text" className="form-control" name="categoria_id" maxLength="255" placeholder="Informe a produto" value={this.state.categoria_id || ''} onChange={this.onChange}/> */}
+                            <div className="form-group col-12 col-md-4">
+                                <label for="empresa_id">Empresa:</label>  
+                              <select name="empresa_id" id="empresa_id" value={this.state.empresa_id || ''}  onChange={this.mudaValorEmpresa} className="form-control">
                              <Empresas/>
+                             </select>
+                              </div>
                             {/* <input type="text" className="form-control" name="empresa_id" maxLength="255" placeholder="Informe a empresa" value={this.state.empresa_id || ''} onChange={this.onChange}/> */}
                          <div className="form-group col-12 col-md-4">
                             <label for="valor">Valor:</label>

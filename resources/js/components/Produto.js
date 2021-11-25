@@ -189,8 +189,13 @@ export default class produto extends Component {
         return
     }
 
+    teste(){
+        console.log('teste');
+    }
 
     render() {
+
+    
         return (
             <div className="layout row">
 
@@ -215,9 +220,10 @@ export default class produto extends Component {
                          </div> 
                          <div className="form-group col-12 col-md-4">
                             <label for="foto">Foto:</label>
-                            <input type="file" className="form-control" name="foto" maxLength="255" value={this.state.foto || ''} onChange={this.onChange}/>
+                            <input type="file"   className="form-control" name="foto" maxLength="255" value={this.state.foto || ''} onChange={this.onChange}/>
                          </div> 
-                        <Categorias/>
+
+                        <Categorias onclick={this.teste}/>
                             {/* <input type="text" className="form-control" name="categoria" maxLength="255" value={this.state.categoria || ''} onChange={this.onChange}/> */}
                          
                          <Empresas/>

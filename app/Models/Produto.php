@@ -21,6 +21,7 @@ class Produto extends Model
             'foto' => $data['foto'],
             'descricao' => $data['descricao'],
             'valor' => $data['valor'],
+            'promo' => $data['promo'],
             'empresa_id' => $data['empresa_id'],
             'categoria_id' => $data['categoria_id'],
         ]);
@@ -33,6 +34,7 @@ class Produto extends Model
             'foto' => $data['foto'],
             'descricao' => $data['descricao'],
             'valor' => $data['valor'],
+            'promo' => $data['promo'],
             'empresa_id' => $data['empresa_id'],
             'categoria_id' => $data['categoria_id'],
         ]);

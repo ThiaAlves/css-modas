@@ -85340,6 +85340,7 @@ var produto = /*#__PURE__*/function (_Component) {
       foto: '',
       descricao: '',
       valor: '',
+      promo: '',
       categoria_id: '',
       empresa_id: '',
       editable: false,
@@ -85374,6 +85375,7 @@ var produto = /*#__PURE__*/function (_Component) {
           foto: '',
           descricao: '',
           valor: '',
+          promo: '',
           categoria_id: '',
           empresa_id: '',
           editable: false,
@@ -85407,6 +85409,7 @@ var produto = /*#__PURE__*/function (_Component) {
             foto: '',
             descricao: '',
             valor: '',
+            promo: '',
             categoria_id: '',
             empresa_id: '',
             editable: false,
@@ -85557,7 +85560,7 @@ var produto = /*#__PURE__*/function (_Component) {
         value: this.state.foto || '',
         onChange: this.onChange
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "form-group col-12 col-md-4"
+        className: "form-group col-12 col-md-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         "for": "categoria_id"
       }, "Categoria:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
@@ -85567,7 +85570,7 @@ var produto = /*#__PURE__*/function (_Component) {
         onChange: this.mudaValorCategoria,
         className: "form-control"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Options__WEBPACK_IMPORTED_MODULE_6__["Categorias"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "form-group col-12 col-md-4"
+        className: "form-group col-12 col-md-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         "for": "empresa_id"
       }, "Empresa:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
@@ -85577,7 +85580,7 @@ var produto = /*#__PURE__*/function (_Component) {
         onChange: this.mudaValorEmpresa,
         className: "form-control"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Options__WEBPACK_IMPORTED_MODULE_6__["Empresas"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "form-group col-12 col-md-4"
+        className: "form-group col-12 col-md-3"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         "for": "valor"
       }, "Valor:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -85588,12 +85591,23 @@ var produto = /*#__PURE__*/function (_Component) {
         value: this.state.valor || '',
         onChange: this.onChange
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group col-12 col-md-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "promo"
+      }, "Promo\xE7\xE3o:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "number",
+        className: "form-control",
+        name: "promo",
+        maxLength: "255",
+        value: this.state.promo || '',
+        onChange: this.onChange
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group col-12 col-md-12"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         "for": "descricao"
-      }, "Descri\xE7\xE3o:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
+      }, "Descri\xE7\xE3o:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
         className: "form-control",
+        rows: "3",
         name: "descricao",
         maxLength: "255",
         placeholder: "Informe a Descri\xE7\xE3o",

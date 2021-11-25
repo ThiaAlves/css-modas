@@ -18,6 +18,7 @@ export default class produto extends Component  {
             foto: '',
             descricao: '',
             valor: '',
+            promo: '',
             categoria_id: '',
             empresa_id: '',
             editable: false,
@@ -49,6 +50,7 @@ export default class produto extends Component  {
                 foto: '',
                 descricao: '',
                 valor: '',
+                promo: '',
                 categoria_id: '',
                 empresa_id: '',
                 editable: false,
@@ -80,6 +82,7 @@ export default class produto extends Component  {
                     foto: '',
                     descricao: '',
                     valor: '',
+                    promo: '',
                     categoria_id: '',
                     empresa_id: '',
                     editable: false,
@@ -203,29 +206,32 @@ export default class produto extends Component  {
                             <label for="foto">Foto:</label>
                             <input type="file" className="form-control" name="foto" maxLength="255" value={this.state.foto || ''} onChange={this.onChange}/>
                          </div> 
-                         <div className="form-group col-12 col-md-4">
+                         <div className="form-group col-12 col-md-3">
                          <label for="categoria_id">Categoria:</label>  
                            <select name="categoria_id" id="categoria_id" value={this.state.categoria_id || ''} onChange={this.mudaValorCategoria} className="form-control">
                             <Categorias /> 
-
                             </select>
                           </div>
-                        
                             {/* <input type="text" className="form-control" name="categoria_id" maxLength="255" placeholder="Informe a produto" value={this.state.categoria_id || ''} onChange={this.onChange}/> */}
-                            <div className="form-group col-12 col-md-4">
+                            <div className="form-group col-12 col-md-3">
                                 <label for="empresa_id">Empresa:</label>  
                               <select name="empresa_id" id="empresa_id" value={this.state.empresa_id || ''}  onChange={this.mudaValorEmpresa} className="form-control">
                              <Empresas/>
                              </select>
                               </div>
                             {/* <input type="text" className="form-control" name="empresa_id" maxLength="255" placeholder="Informe a empresa" value={this.state.empresa_id || ''} onChange={this.onChange}/> */}
-                         <div className="form-group col-12 col-md-4">
+                         <div className="form-group col-12 col-md-3">
                             <label for="valor">Valor:</label>
                             <input type="number" className="form-control" name="valor" maxLength="255" value={this.state.valor || ''} onChange={this.onChange}/>
                          </div> 
+                         <div className="form-group col-12 col-md-3">
+                            <label for="promo">Promoção:</label>
+                            <input type="number" className="form-control" name="promo" maxLength="255" value={this.state.promo || ''} onChange={this.onChange}/>
+                         </div> 
                          <div className="form-group col-12 col-md-12">
                             <label for="descricao">Descrição:</label>
-                            <input type="text" className="form-control" name="descricao" maxLength="255" placeholder="Informe a Descrição" value={this.state.descricao || ''} onChange={this.onChange}/>
+                            <textarea className="form-control" rows="3" name="descricao" maxLength="255" placeholder="Informe a Descrição" value={this.state.descricao || ''} onChange={this.onChange}></textarea>
+                            {/* <input type="text" className="form-control" name="descricao" maxLength="255" placeholder="Informe a Descrição" value={this.state.descricao || ''} onChange={this.onChange}/> */}
                             {/* <input type="text" className="form-control" name="descricao" maxLength="255" value={this.state.descricao || ''} onChange={this.onChange}/> */}
                          </div> 
                                            

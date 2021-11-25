@@ -16,10 +16,10 @@ class CreateProdutosTable extends Migration
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
             $table->string('produto', 100);
-            $table->string('foto', 45);
+            $table->string('foto', 45)->default('default.jpg');
             $table->text('descricao');
             $table->double('valor', 8, 2);
-            $table->double('promo', 3, 2);
+            $table->double('promo', 8, 2)->default(0);
             $table->bigInteger('categoria_id')->unsigned()->index()->nullable();
             $table->foreign('categoria_id')->references('id')->on('categorias')->onDelete('cascade');
             $table->bigInteger('empresa_id')->unsigned()->index()->nullable();

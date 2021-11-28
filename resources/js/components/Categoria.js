@@ -5,7 +5,6 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Swal from 'sweetalert2';
 
 
-
 export default class categoria extends Component {
     constructor() {
         super()

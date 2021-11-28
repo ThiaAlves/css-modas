@@ -185,7 +185,7 @@ export default class empresa extends Component {
         return (
         <div className="layout row">
 
-             <div className="actionDiv col-9">
+             <div className="actionDiv col-9 pb-2">
                  <div className="Formdiv">
                      <h1 className="text-center pb-5">Cadastrar empresa</h1>
                  <form onSubmit={this.onSubmit}>
@@ -206,7 +206,9 @@ export default class empresa extends Component {
                  </div>
                  </form> 
                  </div>
-               </div>
+                 <br/><br/><br/>          
+                    </div>
+
               </div> 
          )
             }

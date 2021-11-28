@@ -27,4 +27,9 @@ class EmpresasController extends Controller
         $Empresas = Empresa::returnDetails($id);
         return $Empresas;
     }
+
+    public function totalEmpresas() {
+        $Empresas = Empresa::totalEmpresas();
+        return $Empresas;
+    }
 }

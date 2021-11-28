@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>CSS MODAS</title>
-        <link rel="icon" href="{{asset('images/favicon.ico')}}"/>
+        <title>Admin - CSS Modas</title>
+        <link rel="icon" href="{{asset('images/logoCssModas.png')}}" width="100%"/>
         <link href="{{asset('css/app.css')}}" rel="stylesheet" />
 	    <link href="https://fonts.googleapis.com/css?family=Montserrat|Tangerine|Lato:wght@900&display=swap" rel="stylesheet" />
   </head>

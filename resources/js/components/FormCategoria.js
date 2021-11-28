@@ -136,7 +136,7 @@ export default class categoria extends Component {
         return (
             <div className="layout row">
 
-                <div className="actionDiv col-9">
+                <div className="actionDiv col-9 pb-1">
                     <div className="Formdiv">
                     <h1 className="text-center pb-5">Cadastrar Categoria</h1>
                   <form onSubmit={this.onSubmit}>
@@ -157,7 +157,9 @@ export default class categoria extends Component {
                 </div>
                 </form>                
                 </div>
+                <br/><br/><br/><br/><br/><br/><br/>
             </div>
+
            </div> 
         )
     }

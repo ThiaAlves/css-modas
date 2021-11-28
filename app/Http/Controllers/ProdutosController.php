@@ -38,5 +38,20 @@ class ProdutosController extends Controller
         $Produtos = Produto::returnDetails($id);
         return $Produtos;
     }
+
+    public function findByCategoria($id) {
+        $Produtos = Produto::readProdutoByCategoria($id);
+        return $Produtos;
+    }
+
+    public function findByEmpresa($id) {
+        $Produtos = Produto::readProdutoByEmpresa($id);
+        return $Produtos;
+    }
+
+    public function totalProdutos() {
+        $Produtos = Produto::totalProdutos();
+        return $Produtos;
+    }
 }
 

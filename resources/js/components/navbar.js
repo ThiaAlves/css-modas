@@ -1,10 +1,12 @@
 import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "react-router-dom";
+import Axios from "axios";
+import { ListaCategorias, ListaEmpresas } from "./Options";
 
 const navbar = () => {
     return(
-<div className="navbar navbar-expand-md navbarBg mb-4" role="navigation">
+<div className="navbar navbar-expand-md navbarBg" role="navigation">
     <a className="navbar-brand" href="#">CSS MODAS</a>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"><FontAwesomeIcon icon="bars" className="icon"/></span>
@@ -12,7 +14,7 @@ const navbar = () => {
     <div className="collapse navbar-collapse" id="navbarCollapse">
         <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-                <a className="nav-link" href="#"><FontAwesomeIcon icon="home" className="icon"/> Home <span className="sr-only">(current)</span></a>
+                <a className="nav-link" href="/"><FontAwesomeIcon icon="home" className="icon"/> Home <span className="sr-only">(current)</span></a>
             </li>
             <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><FontAwesomeIcon icon="pencil-alt" className="icon"/>Cadastros</a>
@@ -29,8 +31,11 @@ const navbar = () => {
                 <li className="dropdown-item"><Link to="/categorias" className="linkMenu"><FontAwesomeIcon icon="tags" className="icon"/>Listagem de Categorias</Link></li>
                     <li className="dropdown-item"><Link to="/empresas" className="linkMenu"><FontAwesomeIcon icon="store-alt" className="icon"/>Listagem de Empresa</Link></li>
                     <li className="dropdown-item"><Link to="/produtos" className="linkMenu"><FontAwesomeIcon icon="tshirt" className="icon"/>Listagem de Produto</Link></li>
-                    
                 </ul>
+            </li>
+
+            <li className="nav-item">
+                <a className="nav-link" href="https://github.com/ThiaAlves/css-modas" target="_blank"><FontAwesomeIcon icon="share" className="icon"/>Acessar Loja</a>
             </li>
             <li className="nav-item">
                 <a className="nav-link" href="https://github.com/ThiaAlves/css-modas" target="_blank"><FontAwesomeIcon icon="share" className="icon"/> Github do Projeto</a>

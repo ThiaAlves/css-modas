@@ -44,6 +44,30 @@ services:
     networks:
       - css-modas
 
+  varnish:
+    image: varnish:latest
+    container_name: css-modas-varnish
+    volumes:
+      - "./.varnish/default.vcl:/etc/varnish/default.vcl"    
+    ports: 
+      - 81:80
+    tmpfs:
+      - /var/lib/varnish:exec
+    environment:
+      - VARNISH_SIZE=2G
+    command: "-p default_keep=3.0"
+    networks:
+      - css-modas
+    depends_on:
+      - app  
+
+  redis:
+    image: redis
+    container_name: css-modas-redis
+    command: redis-server --requirepass rediscssmodas
+    networks:
+      - aplicacao
+
 networks:
   css-modas:
     driver: bridge

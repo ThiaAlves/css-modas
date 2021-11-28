@@ -4,6 +4,7 @@ import Menu from "./Menu";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Swal from 'sweetalert2';
 import {Categorias, Empresas} from './Options';
+import Axios from 'axios';
 
 
 
@@ -189,15 +190,12 @@ export default class produto extends Component {
         return
     }
 
-    teste(){
-        console.log('teste');
-    }
-
     render() {
 
     
         return (
-            <div className="layout row">
+            <div className="pb-5">
+            <div className="layout row pb-5">
 
             <div className="actionDiv col-9">
             <div className="Formdiv">
@@ -222,7 +220,7 @@ export default class produto extends Component {
                             <label for="foto">Foto:</label>
                             <input type="file"   className="form-control" name="foto" maxLength="255" value={this.state.foto || ''} onChange={this.onChange}/>
                          </div> 
-
+                         
                         <Categorias onclick={this.teste}/>
                             {/* <input type="text" className="form-control" name="categoria" maxLength="255" value={this.state.categoria || ''} onChange={this.onChange}/> */}
                          
@@ -252,10 +250,12 @@ export default class produto extends Component {
                 <table class="table table-hover" id="tableprodutos">
             <thead>
                 <tr>
-                <th scope="col" width="30%">Produto</th>
-                <th scope="col" width="20%">Valor</th>
-                <th scope="col" width="10%">Categoria</th>
-                <th scope="col" width="20%">Empresa</th>
+                <th scope="col" width="10%">ID</th>
+                <th scope="col" width="20%">Produto</th>
+                <th scope="col" width="10%">Valor</th>
+                <th scope="col" width="10%">Promo</th>
+                {/* <th scope="col" width="10%">Categoria</th> */}
+                <th scope="col" width="10%">Empresa</th>
                 <th scope="col" width="10%">Foto</th>
                 <th scope="col" width="10%">Ações</th>
                 </tr>
@@ -263,10 +263,14 @@ export default class produto extends Component {
             <tbody>
                 {this.state.produtos.map((produto, index) => {
                     return <tr key={index}>
+
+                      
+                        <td>{produto.id}</td>
                         <td>{produto.produto}</td>
                         <td>{formataValor(produto.valor)}</td>
-                        <td>{produto.categoria_id}</td>
-                        <td>{produto.empresa_id}</td>
+                        <td>{formataValor(produto.promo)}</td>
+                        {/* <td>{produto.categoria}</td> */}
+                        <td>{produto.empresa}</td>
                         <td><img src={'/images/'+produto.foto} width="100%" height="100%"></img></td>
                         <td>
                         <button type="button" className="btn btn-primary btn-sm p-1" data-toggle="modal" data-target="#editproduto" name="edit" onClick={(event) => this.onEdit(event, index)}><FontAwesomeIcon icon="pencil-alt"  className="icon"/></button>
@@ -284,6 +288,9 @@ export default class produto extends Component {
                 </div>
                 </div>
                 </div>
+                <br className="pb-5"></br>
+                </div>
+                
         )
     }
 }

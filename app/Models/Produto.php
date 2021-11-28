@@ -11,7 +11,13 @@ class Produto extends Model
 
     public static function readProduto()
     {
-        return Produto::orderBy('updated_at', 'desc')->paginate(5);
+        return Produto::orderBy('produtos.updated_at', 'desc')
+        ->join('empresas', 'empresas.id', '=', 'produtos.empresa_id')
+        ->join('categorias', 'categorias.id', '=', 'produtos.categoria_id')
+        ->select('produtos.id', 'produtos.produto', 'produtos.foto', 'produtos.valor',
+        'produtos.promo', 'produtos.descricao', 'categorias.categoria', 
+        'empresas.empresa', 'empresas.whatsapp')
+        ->paginate(1000);
     }
 
     public static function createProduto($data)
@@ -49,5 +55,35 @@ class Produto extends Model
     {
         return Produto::where('id', $id)->get();        
     }
+
+    public static function readProdutoByCategoria($id)
+    {
+        return Produto::orderBy('produtos.updated_at', 'desc')
+        ->join('empresas', 'empresas.id', '=', 'produtos.empresa_id')
+        ->join('categorias', 'categorias.id', '=', 'produtos.categoria_id')
+        ->select('produtos.id', 'produtos.produto', 'produtos.foto', 'produtos.valor',
+        'produtos.promo', 'produtos.descricao', 'categorias.categoria', 
+        'empresas.empresa', 'empresas.whatsapp')
+        ->where('categorias.id', $id)
+        ->get();
+    }
+
+    public static function readProdutoByEmpresa($id)
+    {
+        return Produto::orderBy('produtos.updated_at', 'desc')
+        ->join('empresas', 'empresas.id', '=', 'produtos.empresa_id')
+        ->join('categorias', 'categorias.id', '=', 'produtos.categoria_id')
+        ->select('produtos.id', 'produtos.produto', 'produtos.foto', 'produtos.valor',
+        'produtos.promo', 'produtos.descricao', 'categorias.categoria', 
+        'empresas.empresa', 'empresas.whatsapp')
+        ->where('empresas.id', $id)
+        ->get();
+    }
+
+    public static function totalProdutos()
+    {
+        return Produto::selectRaw('count(*) as produtos')->get();
+    }
+
 
 }

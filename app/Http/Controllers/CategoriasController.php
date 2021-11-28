@@ -26,4 +26,11 @@ class CategoriasController extends Controller
         $Categorias = Categoria::returnDetails($id);
         return $Categorias;
     }
+
+    public function totalCategorias() {
+        $Categorias = Categoria::totalCategorias();
+        return $Categorias;
+    }
+
+
 }

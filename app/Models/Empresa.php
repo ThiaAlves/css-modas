@@ -11,7 +11,7 @@ class Empresa extends Model
 
     public static function readEmpresa()
     {
-        return Empresa::orderBy('updated_at', 'desc')->paginate(5);
+        return Empresa::orderBy('updated_at', 'desc')->paginate(1000);
     }
 
     public static function createEmpresa($data)
@@ -38,5 +38,10 @@ class Empresa extends Model
     public static function returnDetails($id)
     {
         return Empresa::where('id', $id)->get();        
+    }
+
+    public static function totalEmpresas()
+    {
+        return Empresa::selectRaw('count(*) as empresas')->get();
     }
 }

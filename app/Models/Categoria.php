@@ -11,7 +11,7 @@ class Categoria extends Model
 
     public static function readCategoria()
     {
-        return Categoria::orderBy('updated_at', 'desc')->paginate(5);
+        return Categoria::orderBy('updated_at', 'desc')->paginate(1000);
     }
 
     public static function createCategoria($data)
@@ -36,5 +36,10 @@ class Categoria extends Model
     public static function returnDetails($id)
     {
         return Categoria::where('id', $id)->get();        
+    }
+
+    public static function totalCategorias()
+    {
+        return Categoria::selectRaw('count(*) as categorias')->get();
     }
 }

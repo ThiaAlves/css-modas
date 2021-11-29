@@ -11,7 +11,8 @@ class Empresa extends Model
 
     public static function readEmpresa()
     {
-        return Empresa::orderBy('updated_at', 'desc')->paginate(1000);
+        return Empresa::orderBy('empresas.updated_at', 'desc')
+        ->paginate(1000);
     }
 
     public static function createEmpresa($data)

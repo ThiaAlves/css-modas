@@ -77,7 +77,7 @@ class Produto extends Model
         'produtos.promo', 'produtos.descricao', 'categorias.categoria', 
         'empresas.empresa', 'empresas.whatsapp')
         ->where('empresas.id', $id)
-        ->get();
+        ->paginate(1000);
     }
 
     public static function totalProdutos()

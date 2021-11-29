@@ -132,7 +132,7 @@ export const insertDataProduto = (input_data, is_edit) => {
     let method_type = 'post'
     if(is_edit) {
         method_type = 'put'
-    }
+    } 
     return fetch('api/produtos', {
         method: method_type,
         body: JSON.stringify(input_data),

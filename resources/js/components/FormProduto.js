@@ -34,6 +34,7 @@ export default class produto extends Component  {
         this.mudaValorCategoria = this.mudaValorCategoria.bind(this)
         this.mudaValorEmpresa = this.mudaValorEmpresa.bind(this)
 
+
     }
     
    
@@ -160,8 +161,6 @@ export default class produto extends Component  {
 
 
 
- 
-    
 
     // ageValidate() {
     //     var idade = $('#idade').val();
@@ -183,6 +182,8 @@ export default class produto extends Component  {
     mudaValorEmpresa(e){
         console.log("Empresa Selecionada "+e.target.value);
         this.setState({ empresa_id: e.target.value });
+
+        
     }
 
 

@@ -3,7 +3,7 @@ services:
   app:
     build:
       args:
-        user: sammy
+        user: cssmodas
         uid: 1000
       context: ./
       dockerfile: Dockerfile
@@ -15,7 +15,6 @@ services:
       - ./:/var/www
     networks:
       - css-modas
-
   db:
     image: mysql:5.7
     container_name: css-modas-db

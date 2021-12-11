@@ -1,0 +1,1 @@
+{"version":1,"defects":[],"times":{"Tests\\Unit\\ExampleTest::testBasicTest":0.001,"Tests\\Feature\\ArticleTest::testeCadastroSucesso":3.415,"Tests\\Feature\\ArticleTest::testeRotaBase":0.01,"Tests\\Feature\\ArticleTest::testeRetornoArtigos":4.086,"Tests\\Feature\\ArticleTest::testArticleIsDestroyed":4.584,"Tests\\Feature\\ExampleTest::testBasicTest":0.058}}

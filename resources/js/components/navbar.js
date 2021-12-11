@@ -35,7 +35,11 @@ const navbar = () => {
             </li>
 
             <li className="nav-item">
+<<<<<<< HEAD
                 <a className="nav-link" href="https://github.com/ThiaAlves/css-modas" target="_blank"><FontAwesomeIcon icon="share" className="icon"/>Acessar Loja</a>
+=======
+                <a className="nav-link" href="http://187.87.223.235:81" target="_blank"><FontAwesomeIcon icon="share" className="icon"/>Acessar Loja</a>
+>>>>>>> parent of eae3cfc7 (Initial commit)
             </li>
             <li className="nav-item">
                 <a className="nav-link" href="https://github.com/ThiaAlves/css-modas" target="_blank"><FontAwesomeIcon icon="share" className="icon"/> Github do Projeto</a>

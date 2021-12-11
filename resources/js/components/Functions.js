@@ -137,7 +137,12 @@ export const insertDataProduto = (input_data, is_edit) => {
         method: method_type,
         body: JSON.stringify(input_data),
         headers: {
+<<<<<<< HEAD
             'content-type': 'application/json'
+=======
+            'content-type': 'application/json',
+            
+>>>>>>> parent of eae3cfc7 (Initial commit)
         }
     })
     .then(result => {
@@ -148,6 +153,21 @@ export const insertDataProduto = (input_data, is_edit) => {
     });
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> parent of eae3cfc7 (Initial commit)
 export const deleteDataProduto = id => {
     return fetch('api/produtos/'+id, {
         method: 'delete',

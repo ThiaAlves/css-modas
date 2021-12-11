@@ -85435,6 +85435,7 @@ var produto = /*#__PURE__*/function (_Component) {
       }
     }
   }, {
+<<<<<<< HEAD
     key: "createImage",
     value: function createImage(file) {
       var _this4 = this;
@@ -85450,6 +85451,8 @@ var produto = /*#__PURE__*/function (_Component) {
       reader.readAsDataURL(file);
     }
   }, {
+=======
+>>>>>>> parent of eae3cfc7 (Initial commit)
     key: "onCancel",
     value: function onCancel(event) {
       event.preventDefault();
@@ -85529,7 +85532,12 @@ var produto = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "text-center pb-5"
       }, "Cadastrar produto"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+<<<<<<< HEAD
         onSubmit: this.onSubmit
+=======
+        onSubmit: this.onSubmit,
+        enctype: "multipart/form-data"
+>>>>>>> parent of eae3cfc7 (Initial commit)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -85551,6 +85559,10 @@ var produto = /*#__PURE__*/function (_Component) {
       }, "Foto:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
         className: "form-control",
+<<<<<<< HEAD
+=======
+        id: "foto",
+>>>>>>> parent of eae3cfc7 (Initial commit)
         name: "foto",
         maxLength: "255",
         value: this.state.foto || '',
@@ -86246,6 +86258,10 @@ var produto = /*#__PURE__*/function (_Component) {
       foto: '',
       descricao: '',
       valor: '',
+<<<<<<< HEAD
+=======
+      promo: '',
+>>>>>>> parent of eae3cfc7 (Initial commit)
       categoria_id: '',
       empresa_id: '',
       editable: false,
@@ -86278,6 +86294,10 @@ var produto = /*#__PURE__*/function (_Component) {
           foto: '',
           descricao: '',
           valor: '',
+<<<<<<< HEAD
+=======
+          promo: '',
+>>>>>>> parent of eae3cfc7 (Initial commit)
           categoria_id: '',
           empresa_id: '',
           editable: false,
@@ -86311,6 +86331,10 @@ var produto = /*#__PURE__*/function (_Component) {
             foto: '',
             descricao: '',
             valor: '',
+<<<<<<< HEAD
+=======
+            promo: '',
+>>>>>>> parent of eae3cfc7 (Initial commit)
             categoria_id: '',
             empresa_id: '',
             editable: false,
@@ -86445,7 +86469,11 @@ var produto = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "actionDiv col-9"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+<<<<<<< HEAD
         className: "Formdiv"
+=======
+        className: "Formdiv table-responsive"
+>>>>>>> parent of eae3cfc7 (Initial commit)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "text-center pb-5"
       }, "Listagem de Produtos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -86473,6 +86501,7 @@ var produto = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: "times",
         className: "icon"
+<<<<<<< HEAD
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.onSubmit
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -86481,6 +86510,17 @@ var produto = /*#__PURE__*/function (_Component) {
         className: "row"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group col-12 col-md-8"
+=======
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "pr-5 pl-5"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.onSubmit,
+        enctype: "multipart/form-data"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row pt-2"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group col-12 col-md-8 "
+>>>>>>> parent of eae3cfc7 (Initial commit)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         "for": "produto"
       }, "Nome da produto:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -86498,10 +86538,15 @@ var produto = /*#__PURE__*/function (_Component) {
       }, "Foto:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
         className: "form-control",
+<<<<<<< HEAD
+=======
+        id: "foto",
+>>>>>>> parent of eae3cfc7 (Initial commit)
         name: "foto",
         maxLength: "255",
         value: this.state.foto || '',
         onChange: this.onChange
+<<<<<<< HEAD
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Options__WEBPACK_IMPORTED_MODULE_5__["Categorias"], {
         onclick: this.teste
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Options__WEBPACK_IMPORTED_MODULE_5__["Empresas"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -86510,16 +86555,57 @@ var produto = /*#__PURE__*/function (_Component) {
         "for": "valor"
       }, "Valor:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
+=======
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group col-12 col-md-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "categoria_id"
+      }, "Categoria:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        name: "categoria_id",
+        id: "categoria_id",
+        onChange: this.mudaValorCategoria,
+        className: "form-control"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Options__WEBPACK_IMPORTED_MODULE_5__["Categorias"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group col-12 col-md-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "empresa_id"
+      }, "Empresa:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        name: "empresa_id",
+        id: "empresa_id",
+        onChange: this.mudaValorEmpresa,
+        className: "form-control"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Options__WEBPACK_IMPORTED_MODULE_5__["Empresas"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group col-12 col-md-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "valor"
+      }, "Valor:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "number",
+>>>>>>> parent of eae3cfc7 (Initial commit)
         className: "form-control",
         name: "valor",
         maxLength: "255",
         value: this.state.valor || '',
         onChange: this.onChange
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+<<<<<<< HEAD
+=======
+        className: "form-group col-12 col-md-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        "for": "promo"
+      }, "Promo\xE7\xE3o:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "number",
+        className: "form-control",
+        name: "promo",
+        maxLength: "255",
+        value: this.state.promo || '',
+        onChange: this.onChange
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+>>>>>>> parent of eae3cfc7 (Initial commit)
         className: "form-group col-12 col-md-12"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         "for": "descricao"
       }, "Descri\xE7\xE3o:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+<<<<<<< HEAD
         name: "descricao",
         rows: "3",
         className: "form-control"
@@ -86536,10 +86622,28 @@ var produto = /*#__PURE__*/function (_Component) {
         type: "submit",
         className: "btn btn-success",
         name: "update",
+=======
+        className: "form-control",
+        rows: "3",
+        name: "descricao",
+        maxLength: "255",
+        placeholder: "Informe a Descri\xE7\xE3o",
+        value: this.state.descricao || '',
+        onChange: this.onChange
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group col-12 col-md-12"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group p-3"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit",
+        className: "btn btn-success",
+        name: "save",
+>>>>>>> parent of eae3cfc7 (Initial commit)
         onclick: this.onSubmit
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__["FontAwesomeIcon"], {
         icon: "check",
         className: "icon"
+<<<<<<< HEAD
       }), "Atualizar")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
         "class": "table table-hover",
         id: "tableprodutos"
@@ -86563,6 +86667,31 @@ var produto = /*#__PURE__*/function (_Component) {
         width: "10%"
       }, "Foto"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
         scope: "col",
+=======
+      }), "Salvar")))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+        "class": "table table-hover",
+        id: "tableprodutos"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        scope: "col-sm",
+        width: "10%"
+      }, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        scope: "col-sm",
+        width: "20%"
+      }, "Produto"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        scope: "col-sm",
+        width: "10%"
+      }, "Valor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        scope: "col-sm",
+        width: "10%"
+      }, "Promo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        scope: "col-sm",
+        width: "10%"
+      }, "Empresa"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        scope: "col-sm",
+        width: "10%"
+      }, "Foto"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        scope: "col-sm",
+>>>>>>> parent of eae3cfc7 (Initial commit)
         width: "10%"
       }, "A\xE7\xF5es"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.produtos.map(function (produto, index) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
@@ -86573,6 +86702,7 @@ var produto = /*#__PURE__*/function (_Component) {
           height: "100%"
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
+<<<<<<< HEAD
           className: "btn btn-primary btn-sm p-1",
           "data-toggle": "modal",
           "data-target": "#editproduto",
@@ -86585,6 +86715,8 @@ var produto = /*#__PURE__*/function (_Component) {
           className: "icon"
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
+=======
+>>>>>>> parent of eae3cfc7 (Initial commit)
           className: "btn btn-danger btn-sm p-1",
           name: "delete",
           onClick: function onClick(event) {
@@ -86806,7 +86938,11 @@ var navbar = function navbar() {
     className: "nav-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     className: "nav-link",
+<<<<<<< HEAD
     href: "https://github.com/ThiaAlves/css-modas",
+=======
+    href: "http://187.87.223.235:81",
+>>>>>>> parent of eae3cfc7 (Initial commit)
     target: "_blank"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
     icon: "share",

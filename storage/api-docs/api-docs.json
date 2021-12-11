@@ -1,0 +1,218 @@
+
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "This is a back-end challenge by Coodesh.",
+      "version": "1.0",
+      "title": "Back-end Challenge 🏅 2021 - Space Flight News",
+      "contact": {
+        "email": "thiaguinho2308@gmail.com"
+      }
+    },
+    "schemes": [
+      "https",
+      "http"
+    ],
+    "paths": {
+      "/articles/": {
+        "post": {
+          "tags": [
+            "article"
+          ],
+          "summary": "Creates a new Article",
+          "description": "",
+          "operationId": "createarticles",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json",
+            "application/xml"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "List of article object",
+              "required": true,
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/article"
+                }
+              }
+            }
+          ],
+          "responses": {
+            "default": {
+              "description": "successful operation"
+            }
+          }
+        }
+      },
+      "/articles/{id}": {
+        "get": {
+          "tags": [
+            "article"
+          ],
+          "summary": "Get article by id",
+          "description": "",
+          "operationId": "getarticleById",
+          "produces": [
+            "application/json",
+            "application/xml"
+          ],
+          "parameters": [
+            {
+              "id": "id",
+              "in": "path",
+              "description": "The id that needs to be fetched.",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "successful operation",
+              "schema": {
+                "$ref": "#/definitions/article"
+              }
+            },
+            "400": {
+              "description": "Invalid articlename supplied"
+            },
+            "404": {
+              "description": "article not found"
+            }
+          }
+        },
+        "put": {
+          "tags": [
+            "article"
+          ],
+          "summary": "Updated article",
+          "description": "This can only be done by the logged in article.",
+          "operationId": "updatearticle",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json",
+            "application/xml"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "id that need to be updated",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Updated article object",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/article"
+              }
+            }
+          ],
+          "responses": {
+            "400": {
+              "description": "Invalid article supplied"
+            },
+            "404": {
+              "description": "article not found"
+            }
+          }
+        },
+        "delete": {
+          "tags": [
+            "article"
+          ],
+          "summary": "Delete article",
+          "description": "This can only be done by the logged in article.",
+          "operationId": "deletearticle",
+          "produces": [
+            "application/json",
+            "application/xml"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "The id that needs to be deleted",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "400": {
+              "description": "Invalid articlename supplied"
+            },
+            "404": {
+              "description": "article not found"
+            }
+          }
+        }
+      },
+      "/articles": {
+        "get": {
+          "tags": [
+            "article"
+          ],
+          "summary": "Get a list of articles",
+          "operationId": "getarticles",
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json",
+            "application/xml"
+          ],
+          "responses": {
+            "default": {
+              "description": "successful operation"
+            }
+          }
+        }
+      }
+    
+    },
+    "definitions": {
+      "article": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "featured": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "imageUrl": {
+            "type": "string"
+          },
+          "newsSite": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "publishedAt": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "article"
+        }
+      }
+    }
+  }

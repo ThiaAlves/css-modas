@@ -16,13 +16,11 @@ class ProdutosController extends Controller
     public function store(Request $request) {
         if($request->isMethod('post')) {
 
-            if($request->hasFile('foto')){
-                $image = $request->file('foto');
-                $image_name = $image->getClientOriginalName();
-                $image->move(public_path('/images'),$image_name);
-            
-                $image_path = "/images/" . $image_name;
-            }
+            if($request->get('file')) {
+                $image = $request->get('file');
+                $name = time().'.' . explode('/', explode(':', substr($image, 0, strpos($image, ';')))[1])[1];
+                \Image::make($request->get('file', ))->save(public_path('images/').$name);
+            } 
 
             return Produto::createProduto($request->input());
          } else {

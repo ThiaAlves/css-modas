@@ -137,8 +137,7 @@ export const insertDataProduto = (input_data, is_edit) => {
         method: method_type,
         body: JSON.stringify(input_data),
         headers: {
-            'content-type': 'application/json',
-            
+            'content-type': 'application/json'
         }
     })
     .then(result => {
@@ -148,18 +147,6 @@ export const insertDataProduto = (input_data, is_edit) => {
         console.log(error);
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 export const deleteDataProduto = id => {
     return fetch('api/produtos/'+id, {

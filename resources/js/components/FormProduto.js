@@ -35,7 +35,6 @@ export default class produto extends Component  {
         this.mudaValorEmpresa = this.mudaValorEmpresa.bind(this)
 
 
-
     }
     
    
@@ -73,7 +72,7 @@ export default class produto extends Component  {
     onSubmit(event) {
         event.preventDefault()
         let input_data = this.validateData(this.state)
-     
+
         if(input_data) {
             input_data.id = this.state.id
             insertDataProduto(input_data, this.state.editable)
@@ -95,7 +94,6 @@ export default class produto extends Component  {
                     last_page: ''
                 })
                 this.getData()
-               
             })
             Swal.fire({
                 title: 'Sucesso!',
@@ -115,6 +113,15 @@ export default class produto extends Component  {
         }
     }
 
+    createImage(file) {
+        let reader = new FileReader();
+        reader.onload = (e) => {
+            this.setState({
+                foto: e.target.result
+            })
+        };
+        reader.readAsDataURL(file);
+    }
 
 
 
@@ -175,6 +182,8 @@ export default class produto extends Component  {
     mudaValorEmpresa(e){
         console.log("Empresa Selecionada "+e.target.value);
         this.setState({ empresa_id: e.target.value });
+
+        
     }
 
 
@@ -188,7 +197,7 @@ export default class produto extends Component  {
                 <div className="actionDiv col-9">
                     <div className="Formdiv">
                     <h1 className="text-center pb-5">Cadastrar produto</h1>
-                  <form onSubmit={this.onSubmit} enctype="multipart/form-data">
+                  <form onSubmit={this.onSubmit}>
                     <div className="row">
                         <div className="form-group col-12 col-md-8">
                         <label for="produto">Nome da produto:</label>
@@ -196,7 +205,7 @@ export default class produto extends Component  {
                          </div> 
                          <div className="form-group col-12 col-md-4">
                             <label for="foto">Foto:</label>
-                            <input type="file" className="form-control" id="foto" name="foto" maxLength="255" value={this.state.foto || ''}  onChange={this.onChange}/>
+                            <input type="file" className="form-control" name="foto" maxLength="255" value={this.state.foto || ''} onChange={this.onChange}/>
                          </div> 
                          <div className="form-group col-12 col-md-3">
                          <label for="categoria_id">Categoria:</label>  

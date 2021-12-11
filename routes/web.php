@@ -19,4 +19,11 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('welcome');
 });
+Route::get('/addPosts', function () {
+    return view('welcome');
+});
+Route::get('/edit/:id', function () {
+    return view('welcome');
+});
 
+Route::resource('/addPost', "postController");

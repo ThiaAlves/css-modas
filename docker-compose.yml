@@ -3,22 +3,37 @@ services:
   app:
     build:
       args:
-        user: spacenews
+        user: cssmodas
         uid: 1000
       context: ./
       dockerfile: Dockerfile
-    image: space-news
-    container_name: spacenewsapp
+    image: css-modas
+    container_name: cssmodas
     restart: unless-stopped
     working_dir: /var/www/
     volumes:
       - ./:/var/www
     networks:
-      - space-news
+      - css-modas
+  db:
+    image: mysql:5.7
+    container_name: css-modas-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - css-modas
 
   nginx:
     image: nginx:alpine
-    container_name: space-news-nginx
+    container_name: css-modas-nginx
     restart: unless-stopped
     ports:
       - 8082:80
@@ -26,8 +41,32 @@ services:
       - ./:/var/www
       - ./docker-compose/nginx:/etc/nginx/conf.d/
     networks:
-      - space-news
+      - css-modas
+
+  varnish:
+    image: varnish:latest
+    container_name: css-modas-varnish
+    volumes:
+      - "./.varnish/default.vcl:/etc/varnish/default.vcl"    
+    ports: 
+      - 81:80
+    tmpfs:
+      - /var/lib/varnish:exec
+    environment:
+      - VARNISH_SIZE=2G
+    command: "-p default_keep=3.0"
+    networks:
+      - css-modas
+    depends_on:
+      - app  
+
+  redis:
+    image: redis
+    container_name: css-modas-redis
+    command: redis-server --requirepass rediscssmodas
+    networks:
+      - aplicacao
 
 networks:
-  space-news:
+  css-modas:
     driver: bridge
